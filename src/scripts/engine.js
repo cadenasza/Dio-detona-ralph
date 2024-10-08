@@ -67,10 +67,6 @@ function countDown() {
     }
 }
 
-function playGame() {
-
-}
-
 function init() {
     state.view.play.addEventListener('click', () => {
         moveEnemy();
