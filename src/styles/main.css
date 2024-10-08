@@ -1,6 +1,6 @@
 main {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
 }
 
@@ -26,7 +26,6 @@ main {
     align-items: center;
     justify-content: center;
     height: 100vh;
-
 }
 
 .square {
@@ -62,4 +61,18 @@ main {
 .second {
     margin-top: .8rem;
     text-align: center;
+}
+
+.div-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #ff0000;
+    width: 25vw;
+    border-radius: 10px;
 }
