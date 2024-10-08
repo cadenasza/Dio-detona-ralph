@@ -13,6 +13,7 @@ main {
     background-color:#000000 ;
     color: #ffffff;
     border-bottom:3px solid #ffd700 ;
+    position: fixed;
 }
 
 .your-score, .time{
@@ -20,12 +21,20 @@ main {
 }
 
 .panel{
+    margin-top: 4rem;
     background-image: url(../img/wall.png);
     background-repeat: repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-direction: column;
+}
+
+.panel-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .square {
@@ -69,18 +78,21 @@ main {
     justify-content: center;
 }
 
-.button {
+.button, .resetar {
     padding: 1rem;
     margin: 1rem 0;
-    background-color: #ff0000;
+    background-color:#00ff00 ;
     width: 25vw;
     border-radius: 10px;
     font-size: 1.2rem;
     border: none;
 }
+.resetar {
+    background-color:#ff0000 ;
+}
 
-.button:hover{
-    background-color: #2bff00;
+.button:hover, .resetar:hover{
+    opacity: .7;
     cursor: pointer;
     transition: 1s;
 }

@@ -4,17 +4,18 @@ const state = {
         enemy: document.querySelector(".enemy"),
         timeLeft: document.querySelector("#time-left"),
         score: document.querySelector("#score"),
-        play: document.querySelector(".button")
+        play: document.querySelector(".button"),
+        reset: document.querySelector('.resetar')
     },
     values: {
         timerId: null,
         gameVelocity: 750,
         hitPosition: 0,
         result: 0,
-        currentTime: 30,
+        currentTime: 10,
     },
     actions: {
-        countDownTimerID: setInterval(countDown, 1000)
+        countDownTimerID: 0
     }
 }
 
@@ -62,15 +63,38 @@ function countDown() {
 
     if (state.values.currentTime <= 0) {
         clearInterval(state.actions.countDownTimerID)
-        alert("Game Over! O seu tempo acabou " + state.values.result);
-        state.view.score = '';
     }
+}
+
+function resetGame() {
+    clearInterval(state.values.countDownTimerID);  
+    state.values.timerId = null;          
+    state.values.currentTime = 30;       
+    state.values.result = 0;              
+    state.view.score.textContent = 0;     
+    state.view.timeLeft.textContent = 30; 
+    state.values.hitPosition = null;     
+    state.view.squares.forEach((square) => {
+        square.classList.remove("enemy"); 
+    });
+    state.view.play.disabled = false;     
+}
+
+function startGame() {
+    state.values.countDownTimerID = setInterval(countDown, 1000);
+    if (state.values.currentTime <= 0) {
+        clearInterval(state.actions.countDownTimerID)
+    }
+    moveEnemy();  
+    addListenerHitBox();  
 }
 
 function init() {
     state.view.play.addEventListener('click', () => {
-        moveEnemy();
-        addListenerHitBox();
-    })
+        if (!state.values.timerId) { 
+            startGame();
+            state.view.play.disabled = true; 
+        }
+    });
 }
 init();
