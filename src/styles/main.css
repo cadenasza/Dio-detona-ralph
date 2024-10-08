@@ -75,4 +75,12 @@ main {
     background-color: #ff0000;
     width: 25vw;
     border-radius: 10px;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.button:hover{
+    background-color: #2bff00;
+    cursor: pointer;
+    transition: 1s;
 }
