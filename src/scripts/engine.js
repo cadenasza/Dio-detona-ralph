@@ -12,7 +12,7 @@ const state = {
         gameVelocity: 750,
         hitPosition: 0,
         result: 0,
-        currentTime: 10,
+        currentTime: 25,
     },
     actions: {
         countDownTimerID: 0
