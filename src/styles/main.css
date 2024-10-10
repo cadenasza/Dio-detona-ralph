@@ -27,11 +27,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
 }
 
-.panel-row{
+.panel-row, .painel-row-last{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,9 +40,9 @@ main {
 .square {
     background-image: url(../img/janela.png);
     background-size: cover;
-    height: 11.25rem;
+    height: 10.25rem;
     border: 1px solid #000;
-    width: 11.25rem;
+    width: 10.25rem;
     border: 1px solid #000;
     
 }
@@ -64,6 +64,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
 }
 
@@ -80,9 +81,9 @@ main {
 
 .button, .resetar {
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1rem 0 ;
     background-color:#00ff00 ;
-    width: 25vw;
+    width: 20vw;
     border-radius: 10px;
     font-size: 1.2rem;
     border: none;
@@ -98,5 +99,80 @@ main {
 }
 
 .botoes{
-    margin-top: 2rem;
+    margin-top: 2rem;;
+}
+
+.player {
+    height: 3rem;
+}
+
+
+@media screen and (max-width:1212px) {
+    .resetar, .button{
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width:735px) {
+    .painel-row-last{
+        display: none;
+    }
+    .delete{
+        display: none;
+    }
+    .resetar, .button{
+        width: 50vw;
+    }
+    .time, .your-score, .second{
+        font-size: 1.2rem;
+    } 
+    .player{
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width:540px){
+    .painel-row-last{
+        display: none;
+    }
+    .delete{
+        display: none;
+    }
+    .resetar, .button{
+        width: 50vw;
+    }
+    .square{
+        width: 8rem;
+        height: 8rem;
+    }
+    .time, .your-score, .second{
+        font-size: 1rem;
+    } 
+    .player{
+        height: 2rem;
+    }
+
+}
+
+@media screen and (max-width:398px){
+    .painel-row-last{
+        display: none;
+    }
+    .delete{
+        display: none;
+    }
+    .resetar, .button{
+        width: 50vw;
+    }
+    .square{
+        width: 6.3rem;
+        height: 6.3rem;
+    }
+    .time, .your-score, .second{
+        font-size: .9rem;
+    } 
+    .player{
+        height: 1.8rem;
+    }
+
 }
