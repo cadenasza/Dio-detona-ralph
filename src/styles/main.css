@@ -21,7 +21,7 @@ main {
 }
 
 .panel{
-    margin-top: 4rem;
+    margin-top: 5rem;
     background-image: url(../img/wall.png);
     background-repeat: repeat;
     display: flex;
@@ -95,4 +95,8 @@ main {
     opacity: .7;
     cursor: pointer;
     transition: 1s;
+}
+
+.botoes{
+    margin-top: 2rem;
 }

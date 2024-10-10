@@ -59,15 +59,22 @@ function addListenerHitBox() {
 
 function countDown() {
     state.values.currentTime--;
-    state.view.timeLeft.textContent = state.values.currentTime
+
+    if (state.values.currentTime >= 0) {
+        state.view.timeLeft.textContent = state.values.currentTime;
+    }
 
     if (state.values.currentTime <= 0) {
-        clearInterval(state.actions.countDownTimerID)
+        clearInterval(state.actions.countDownTimerID);  
+        clearInterval(state.values.timerId);  
+        state.view.play.disabled = false;  
     }
 }
 
+
 function resetGame() {
-    clearInterval(state.values.countDownTimerID);  
+    clearInterval(state.values.countDownTimerID);
+    clearInterval(state.values.timerId);  
     state.values.timerId = null;          
     state.values.currentTime = 30;       
     state.values.result = 0;              
@@ -79,6 +86,8 @@ function resetGame() {
     });
     state.view.play.disabled = false;     
 }
+
+
 
 function startGame() {
     state.values.countDownTimerID = setInterval(countDown, 1000);
